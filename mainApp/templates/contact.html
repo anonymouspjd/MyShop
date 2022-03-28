@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>MyShop | Login</title>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <h3 class="background text-light p-3 text-center">Contact Us Section</h3>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="mapouter">
+              <div class="card">
+                <div class="card-body" style="text-align: center;">
+                  <h5 class="card-title">Mysite.com</h5>
+                  <h5 class="card-title">Contact : 9760379311</h5>
+                  <h5 class="card-title">Email : vipulrana2013gmail.com</h5>
+                  <h5 class="card-title">Mysite.com</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="gmap_canvas">
+                <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=roorkee,rampur&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+
+                </iframe>
+                <a href="https://kokagames.com/">FNF</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style>
+              
+          </div>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            {% for i in messages %}
+            <div class="alert alert-success" role="alert">
+                {{i}}
+              </div>
+            {% endfor %}
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name ">
+                  </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email Id ">
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number ">
+                  </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input name="text" class="form-control" name="subject" placeholder="Enter subject">
+
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">message</label>
+                    <textarea class="form-control" name="message" cols="30" rows="10"></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
